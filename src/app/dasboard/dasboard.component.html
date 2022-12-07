@@ -1,1 +1,42 @@
-<p>dasboard works!</p>
+<!-- <p>dasboard works!</p> -->
+<div id="div2" class="container w-75  p-3">
+    <div class="row">
+       <div class="col-lg-6">
+        <form (ngSubmit)="deposit()" action="">
+            <h1>Deposit Form</h1>
+            <div class="mt-2 p-2">
+                <input name="acname1" [(ngModel)]="acno" class="form-control p-2" type="text" placeholder="Enter your Account number" >
+            </div>
+            <div class="mt-2 p-2">
+                <input name="acnum1" [(ngModel)]="psw" class="form-control p-2" type="password" placeholder="Enter Password" >
+            </div>
+            <div class="mt-2 p-2">
+                <input name="psw1" [(ngModel)]="amnt" class="form-control p-2" type="text" placeholder="Enter Amount" >
+            </div>
+            <div class="mt-2 p-2 text-center">
+                <button type="submit" class="btn btn-dark">Deposit</button>
+            </div>
+        </form>
+       </div>
+       <div class="col-lg-6">
+        <form (ngSubmit)="withdraw()" action="">
+            <h1>Withdrawel Form</h1>
+            <div class="mt-2 p-2">
+                <input name="acname2" [(ngModel)]="acno" class="form-control p-2" type="text" placeholder="Enter your Account number" >
+            </div>
+            <div class="mt-2 p-2">
+                <input name="acnum2" [(ngModel)]="psw" class="form-control p-2" type="password" placeholder="Enter Password" >
+            </div>
+            <div class="mt-2 p-2">
+                <input name="psw2" [(ngModel)]="amnt" class="form-control p-2" type="text" placeholder="Enter Amount" >
+            </div>
+            <div class="mt-2 p-2 text-center">
+                <button type="submit" class="btn btn-dark">Withdraw</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+</div>
+
+

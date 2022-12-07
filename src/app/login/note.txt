@@ -26,3 +26,17 @@ navigateByUrl - method used for Redirection
 Router - predefined class
 
 AppRoutingModule - module
+
+Dependency injection
+--------------------
+- to use a method of class in another class
+- in constructor 
+
+-steps          access specifier - public or private
+                 variable
+                 class name
+                           private variable:Classna
+
+Angular services
+-----------------
+ng g s servicename

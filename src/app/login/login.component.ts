@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -20,22 +22,20 @@ export class LoginComponent {
 
   }
 
+   constructor(private router:Router,private ds:DataService){}
+
   login(){
     var acno=this.acno
     var psw=this.psw
-    var userDetails=this.userDetails
-
-      if(acno in userDetails){
-        if(psw==userDetails[acno]["password"]){
-          alert("login success")
-        }
-        else{
-          alert("incorrect password")
-        }
-      }
-      else{
-        alert("incorrect username")
-      }
+    
+    const result=this.ds.login(acno,psw)
+    if(result){
+      alert('login success')
+      this.router.navigateByUrl('dashboard')
+    }
+    else{
+      alert('incorrect username or password')
+    }
     // alert('login clicked')
   }
 //  login(a:any,b:any){
