@@ -40,3 +40,18 @@ Dependency injection
 Angular services
 -----------------
 ng g s servicename
+
+Angular Directives
+------------------
+
+1.structural directives - uses to handle structured datas in view of a component
+
+     - ngFor : can directly apply in html to access elements from array
+
+
+Form validation in Angular
+----------------------------
+
+1. Template driven Form
+
+2.Model driven Form
