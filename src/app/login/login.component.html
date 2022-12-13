@@ -4,12 +4,18 @@
 </div>
 <div id="div1" class="container w-50 p-3">
     <h1 class="text-center">Login Form</h1>
-    <form (ngSubmit)="login()" action="">
+    <form (ngSubmit)="login()" [formGroup]="loginForm" action="">
         <div class="mt-2 p-2">
-            <input name="acno" [(ngModel)]="acno"  class="form-control p-2" type="text" [placeholder]="data" id="acid">
+            <input name="acno" formControlName="acno"  class="form-control p-2" type="text" [placeholder]="data" id="acid">
+        </div>
+        <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+            <p class="text-danger">Invalid Account Number</p>
         </div>
         <div class="mt-2 p-2">
-            <input name="psw"  [(ngModel)]="psw" class="form-control p-2" type="password" placeholder="Enter Password" id="pid">
+            <input name="psw" formControlName="psw"  class="form-control p-2" type="password" placeholder="Enter Password" id="pid">
+        </div>
+        <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+            <p class="text-danger">Invalid Password</p>
         </div>
         <div class="mt-2 p-2 text-center">
             <button type="submit" class="btn btn-dark">Login</button>

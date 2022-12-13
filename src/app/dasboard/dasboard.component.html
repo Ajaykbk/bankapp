@@ -6,16 +6,25 @@
  <div id="div2" class="container w-75  p-3">
     <div class="row">
        <div class="col-lg-6">
-        <form (ngSubmit)="deposit()" action="">
+        <form (ngSubmit)="deposit()" [formGroup]="depositForm" action="">
             <h1>Deposit Form</h1>
             <div class="mt-2 p-2">
-                <input name="acname1" [(ngModel)]="acno" class="form-control p-2" type="text" placeholder="Enter your Account number" >
+                <input name="acname1" formControlName="acno" class="form-control p-2" type="text" placeholder="Enter your Account number" >
+            </div>
+            <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
+                <p class="text-danger">Invalid Account Number</p>
             </div>
             <div class="mt-2 p-2">
-                <input name="acnum1" [(ngModel)]="psw" class="form-control p-2" type="password" placeholder="Enter Password" >
+                <input name="acnum1" formControlName="psw" class="form-control p-2" type="password" placeholder="Enter Password" >
+            </div>
+            <div *ngIf="this.depositForm.get('psw')?.errors && this.depositForm.get('psw')?.touched">
+                <p class="text-danger">Invalid Password</p>
             </div>
             <div class="mt-2 p-2">
-                <input name="psw1" [(ngModel)]="amnt" class="form-control p-2" type="text" placeholder="Enter Amount" >
+                <input name="psw1" formControlName="amnt" class="form-control p-2" type="text" placeholder="Enter Amount" >
+            </div>
+            <div *ngIf="this.depositForm.get('amnt')?.errors && this.depositForm.get('amnt')?.touched">
+                <p class="text-danger">Invalid amount</p>
             </div>
             <div class="mt-2 p-2 text-center">
                 <button type="submit" class="btn btn-dark">Deposit</button>
@@ -23,16 +32,25 @@
         </form>
        </div>
        <div class="col-lg-6">
-        <form (ngSubmit)="withdraw()" action="">
+        <form (ngSubmit)="withdraw()" [formGroup]="withdrawForm" action="">
             <h1>Withdrawel Form</h1>
             <div class="mt-2 p-2">
-                <input name="acname2" [(ngModel)]="acno1" class="form-control p-2" type="text" placeholder="Enter your Account number" >
+                <input name="acname2" formControlName="acno1" class="form-control p-2" type="text" placeholder="Enter your Account number" >
+            </div>
+            <div *ngIf="this.withdrawForm.get('acno1')?.errors && this.withdrawForm.get('acno1')?.touched">
+                <p class="text-danger">Invalid Account number</p>
             </div>
             <div class="mt-2 p-2">
-                <input name="acnum2" [(ngModel)]="psw1" class="form-control p-2" type="password" placeholder="Enter Password" >
+                <input name="acnum2" formControlName="psw1" class="form-control p-2" type="password" placeholder="Enter Password" >
             </div>
+            <div *ngIf="this.withdrawForm.get('psw1')?.errors && this.withdrawForm.get('psw1')?.touched">
+            <p class="text-danger">Invalid Password</p>
+        </div>
             <div class="mt-2 p-2">
-                <input name="psw2" [(ngModel)]="amnt1" class="form-control p-2" type="text" placeholder="Enter Amount" >
+                <input name="psw2" formControlName="amnt1" class="form-control p-2" type="text" placeholder="Enter Amount" >
+            </div>
+            <div *ngIf="this.withdrawForm.get('amnt1')?.errors && this.withdrawForm.get('amnt1')?.touched">
+                <p class="text-danger">Invalid Amount</p>
             </div>
             <div class="mt-2 p-2 text-center">
                 <button type="submit" class="btn btn-dark">Withdraw</button>
