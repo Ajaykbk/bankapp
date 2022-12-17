@@ -95,6 +95,19 @@ Form validation in Angular
    Parent Child Component Communication in Angular
    ----------------------------------------------- 
 
+   @Input - parent to child data sharing
+
+   @Output - child to parent data sharing
+
+   datas only share via selector of component
+
+   User Defined Events Creation in Angular
+   ---------------------------------------
+
+   EventEmitter (from angular core) : class used to create events
+
+   emit() : to start the event
+
 
 
    Date in Angular
@@ -103,5 +116,30 @@ Form validation in Angular
    Date   - class
 
    -create an object of class Date to access Date and Time
+
+   Event creation in Angular
+   --------------------------
+
+   EventEmitter class
+
+  eg: onCancel=new EventEmitter()
+
+  Angular Pipe
+  ------------
+
+  to transform datas into another format
+     eg: date pipe 
+
+
+     npm i : command to install node_modules 
+
+
+Server creation
+----------------
+
+-First cretae a new folder 
+-folder must have package.json file 
+-to get that go to cmd and enter command : npm init
+
 
 

@@ -11,7 +11,7 @@
     <button (click)="deleteconfirm()" class="btn btn-danger" style="margin-left: 90%; margin-top: -5%;">Delete</button>
 </div>
 
- <app-deleteconfirm  [item]="acno"></app-deleteconfirm>
+ <app-deleteconfirm (onCancel)="oncancel()"  [item]="acno"></app-deleteconfirm>
 
  <div [ngClass]="acno?'style':''" id="div2" class="container w-75  p-3">
     <div class="row">
